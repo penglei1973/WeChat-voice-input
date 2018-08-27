@@ -1,0 +1,244 @@
+.voice
+  /*图片长按不保存*/
+  img 
+    pointer-events none
+    -webkit-user-select none
+    -moz-user-select none
+    user-select none
+  .textnone
+    display none
+    width: 0
+    height 0
+  .texthidden   
+    visibility: hidden  
+  .showTime 
+    -webkit-animation-name show_bottom
+    -webkit-animation-duration 1s
+    -webkit-animation-timing-function linear
+    -webkit-animation-iteration-count 1 
+    -webkit-animation-fill-mode: forwards 
+  @keyframes show_bottom   
+    from 
+      bottom  -2.5rem
+    to   
+      bottom 0rem
+  .hide-bottom 
+    -webkit-animation-name hide_bottom
+    -webkit-animation-duration 1s
+    -webkit-animation-timing-function linear
+    -webkit-animation-iteration-count 1 
+    -webkit-animation-fill-mode: forwards 
+  @keyframes hide_bottom   
+    from 
+      bottom  0rem
+    to   
+      bottom -2.5rem    
+  .voice-bottom
+    height: 2.5rem;
+    font-size: 0.16rem;
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    // bottom: -2.5rem;
+    bottom: 0rem;
+    left: 0;
+    width: 100%;
+    span
+      position relative
+      color: #8f8f94;
+      top 0.75rem
+      width 0.8rem
+      font-size: 0.12rem
+    .tooshort
+      position absolute
+      top -0.5rem
+      left 1rem
+      opacity:0;
+    .tooshort-hide  
+      -webkit-animation-name hide_tooshort
+      -webkit-animation-duration 1s
+      -webkit-animation-timing-function linear
+      -webkit-animation-iteration-count 1 
+      @keyframes hide_tooshort 
+        from 
+          opacity:0;
+        to 
+          opacity:100;
+      img 
+       height 1.2rem
+       width 1.2rem  
+    .say
+      position relative
+      color: #8f8f94;
+      top 1.25rem
+      width 0.8rem
+      font-size: 0.12rem
+    .voice-text
+      position absolute
+      width: 2.8rem
+      height 0.5rem
+      .voice-text-model3
+        color black
+      p
+        position relative
+        font-size: 0.2rem
+        color: #8f8f94;
+        top: 0.1rem
+        left 0.2rem
+        text-align left 
+        .dot-ani
+          display inline-block
+          position relative
+          font-size: 0.2rem
+          height 0.2rem
+          top: 0rem
+          left 0.05rem
+          overflow hidden
+          &::after
+            display inline-table
+            line-height: 0.2rem
+            white-space: pre
+            content "\A.\A..\A..."
+            -webkit-animation spin 1s steps(4) infinite
+          @keyframes spin 
+            to   
+              -webkit-transform: translateY(-0.8rem)
+              transform: translateY(-0.8rem)
+    .voice-down 
+      position absolute   
+      top 1.7rem    
+      .voice-down-leftimg
+        position absolute 
+        top: 0.1rem
+        left 0.25rem
+        img 
+          width: 0.25rem
+          height 0.25rem
+      .voice-down-lefttext
+        position absolute 
+        top: 0.15rem
+        left 0.15rem   
+        font-size: 0.16rem 
+      .voice-down-righttext
+        position absolute 
+        top: 0.15rem
+        left 2.25rem   
+        font-size: 0.16rem  
+        color: #2ca244 
+    .voice-change
+      margin 0 auto
+      height: 1rem
+      width: 1rem
+      border-radius: 50%
+      background-color: #ffffff
+      border:0rem solid #ffffff
+      justify-content:center
+      align-items: center
+      position relative
+      top: 1.25rem
+      display:flex
+      .voice-right
+        position absolute
+        //background-color: yellow 
+        width 0.3rem
+        height 0.6rem
+        margin-left: 0.145rem
+        justify-content:center
+        align-items: center
+        overflow hidden
+        .voice-rightcircle
+          width: 0.6rem
+          height 0.6rem
+          border:0.02rem solid  transparent
+          border-radius: 50%
+          position relative
+          left -0.3rem
+          border-top:0.02rem solid #ffffff
+          border-right:0.02rem solid #ffffff
+          transform : rotate(-135deg)
+      .voice-left 
+        position absolute
+        //background-color: red 
+        width 0.3rem
+        height 0.6rem
+        margin-left: -0.145rem
+        justify-content:center
+        align-items: center
+        overflow hidden
+        .voice-leftcircle
+          width: 0.6rem
+          height 0.6rem
+          border:0.02rem solid  transparent
+          border-radius: 50%
+          position relative
+          //left 0.3rem
+          border-top:0.02rem solid#ffffff
+          border-right:0.02rem solid #ffffff
+          transform : rotate(45deg)   
+          -webkit-transform : rotate(45deg)   
+      .voice-outer
+        position relative
+        display:flex
+        height 0.5rem
+        width 0.5rem
+        border-radius: 0.25rem
+        background-color: #2ca244
+        justify-content:center
+        align-items: center
+        img        
+          display:table-cell
+          height 0.25rem
+          width 0.25rem
+          border-radius: 0.125rem
+          background-color: #2ca244
+          transform:rotate(19deg)
+          -webkit-transform:rotate(19deg)
+    .begin-circle
+      .voice-right
+        .voice-rightcircle
+          -webkit-animation-name circle_right
+          -webkit-animation-duration 2s
+          -webkit-animation-timing-function linear
+          -webkit-animation-iteration-count infinite
+          border-top:0.02rem solid #2ca244
+          border-right:0.02rem solid #2ca244
+        @keyframes circle_right
+          0%
+            transform: rotate(-135deg)
+          50%,
+          100%
+            transform: rotate(45deg)
+      .voice-left
+        .voice-leftcircle
+          -webkit-animation-name circle_left
+          -webkit-animation-duration 2s
+          -webkit-animation-timing-function linear
+          -webkit-animation-iteration-count infinite
+          border-top:0.02rem solid #2ca244
+          border-right:0.02rem solid #2ca244
+        @keyframes circle_left
+          0%,
+          50%
+            transform: rotate(45deg)
+            -webkit-transform: rotate(45deg)
+          100%
+            transform: rotate(225deg) 
+            -webkit-transform: rotate(225deg) 
+    .begin-shrink
+      -webkit-animation-name circle_shrink
+      -webkit-animation-duration 1s
+      -webkit-animation-timing-function linear
+      -webkit-animation-iteration-count infinite
+      // 基础属性
+      background-color: #cfecd0 
+    @keyframes circle_shrink 
+      0%
+        border:0rem solid #ffffff
+      10%
+        border:0.1rem solid #cfecd0
+      100%
+        border:0rem solid #ffffff
+  
+
+
+	
