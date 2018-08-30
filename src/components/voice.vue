@@ -126,7 +126,7 @@ export default {
       let _this = this
       //上传录音地址
       //  _this.recorder.upload('../../static/h5voice/save.php', function(
-      _this.recorder.upload('https://shixiangru.cn/h5voice/save.php', function(
+      _this.recorder.upload('https://XXX.cn/h5voice/save.php', function(
         state,
         e
       ) {
