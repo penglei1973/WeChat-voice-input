@@ -17,7 +17,7 @@
           <p class="voice-text-model1 textnone">{{textState}}
             <span class="dot-ani"></span>
           </p>
-          <p class="voice-text-model2 textnone">麦思科.云解析中</p>
+          <p class="voice-text-model2 textnone">无常.云解析中</p>
           <p class="voice-text-model3 textnone">{{textConent}}</p>
 
         </div>
